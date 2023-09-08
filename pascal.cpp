@@ -48,17 +48,18 @@ int main(int argc, char **argv) {
         }
 
         // Get next row and then free previous row
-        row_ptr = generate_row(j + 1, row);
+        row_ptr = generate_row(j + 2, row);
         delete [] row;
         row = row_ptr;
     }
 }
 
+// Generates nth row which has n entries
 int* generate_row(int n, int* prev_row) {
     int* output = new int [n];
     output[0] = 1;
-    output[n] = 1;
-    for (int i = 1; i < n; i++) {
+    output[n - 1] = 1;
+    for (int i = 1; i < n - 1; i++) {
         output[i] = prev_row[i - 1] + prev_row[i];
     }
     return output;
