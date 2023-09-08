@@ -4,7 +4,6 @@
 using namespace std;
 
 int* generate_row(int n, int* prev_row);
-void free_row(int* row_ptr, int row_size);
 
 int main(int argc, char **argv) {
 
@@ -63,13 +62,4 @@ int* generate_row(int n, int* prev_row) {
         output[i] = prev_row[i - 1] + prev_row[i];
     }
     return output;
-}
-
-void free_row(int* row_ptr, int row_size) {
-    if (row_size == 1) {
-        delete row_ptr;
-    } else {
-        delete [] row_ptr;
-    }
-    return;
 }
