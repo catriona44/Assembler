@@ -1,3 +1,1 @@
-# learningCpp
-
-Repo for exercises on C++
+Assembler program for nand to tetris part 1 course
